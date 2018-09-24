@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright 2018 Thomas Winkler
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
+
+
+    <persistence-unit name="dfap" transaction-type="RESOURCE_LOCAL">
+        <provider>org.apache.openjpa.persistence.PersistenceProviderImpl</provider>
+        <jta-data-source>dfapData</jta-data-source>
+        <non-jta-data-source>dfapDataUnmanaged</non-jta-data-source>
+        <class>entities.Article</class>
+        <class>entities.FeedbackEntry</class>
+        <class>entities.Machine</class>
+        <class>entities.MachinePart</class>
+        <class>entities.MachineProperty</class>
+        <class>entities.Ordering</class>
+        <class>entities.OrderingPartsList</class>
+        <class>entities.Process</class>
+        <class>entities.Property</class>
+        <class>entities.PropertyCategory</class>
+        <class>entities.SettingValue</class>
+        <class>entities.SubProcess</class>
+        <class>entities.TestInstruction</class>
+        <class>entities.TestInstructionEntry</class>
+        <class>entities.TestInstructionProperty</class>
+        <class>entities.TestInstructionValue</class>
+        <class>entities.Tool</class>
+        <class>entities.ToolSetting</class>
+
+
+        <properties>
+            <property name="openjpa.Log" value="none"/>
+            <property name="openjpa.ConnectionURL" value="the-complete-connection-string--goes-here"/>
+            <property name="openjpa.ConnectionDriverName" value="your.driver.here.e.g.mysql"/>
+            <property name="openjpa.ConnectionUserName" value="your-user" />
+            <property name="openjpa.ConnectionPassword" value="your-password" />
+        </properties>
+
+
+    </persistence-unit>
+</persistence>
